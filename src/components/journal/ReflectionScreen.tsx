@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 import JournalCard from "./JournalCard";
 
 interface Entry {
@@ -10,13 +11,17 @@ interface Entry {
 interface ReflectionScreenProps {
   entries: Entry[];
   onComplete: () => void;
+  onBack: () => void;
 }
 
-const ReflectionScreen = ({ entries, onComplete }: ReflectionScreenProps) => {
+const ReflectionScreen = ({ entries, onComplete, onBack }: ReflectionScreenProps) => {
   const [meaningful, setMeaningful] = useState("");
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen rainbow-bg px-6 py-10 animate-fade-in">
+    <div className="flex flex-col items-center justify-center min-h-screen rainbow-bg px-6 py-10 animate-fade-in relative">
+      <button onClick={onBack} className="absolute top-6 left-6 text-muted-foreground hover:text-foreground transition-colors">
+        <ArrowLeft className="w-5 h-5" />
+      </button>
       <div className="max-w-md w-full space-y-5">
         <h2 className="text-lg text-center text-foreground">Your Gratitude Reflections</h2>
         <p className="text-sm text-muted-foreground text-center journal-font text-justify">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 import ProgressBar from "./ProgressBar";
 
 interface PromptScreenProps {
@@ -9,13 +10,17 @@ interface PromptScreenProps {
   total: number;
   isLast: boolean;
   onSubmit: (text: string) => void;
+  onBack: () => void;
 }
 
-const PromptScreen = ({ prompt, hints, current, total, isLast, onSubmit }: PromptScreenProps) => {
+const PromptScreen = ({ prompt, hints, current, total, isLast, onSubmit, onBack }: PromptScreenProps) => {
   const [text, setText] = useState("");
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen rainbow-bg px-6 py-10 animate-fade-in">
+    <div className="flex flex-col items-center justify-center min-h-screen rainbow-bg px-6 py-10 animate-fade-in relative">
+      <button onClick={onBack} className="absolute top-6 left-6 text-muted-foreground hover:text-foreground transition-colors">
+        <ArrowLeft className="w-5 h-5" />
+      </button>
       <div className="max-w-md w-full space-y-5">
         <ProgressBar current={current} total={total} />
 

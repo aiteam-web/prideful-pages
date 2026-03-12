@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 const IntroScreen = ({ onStart, onViewHistory, hasHistory }: { onStart: () => void; onViewHistory: () => void; hasHistory: boolean }) => {
   return (

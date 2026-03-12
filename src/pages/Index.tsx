@@ -88,6 +88,19 @@ const Index = () => {
   const handleViewHistory = () => setScreen("history");
   const handleBackFromHistory = () => setScreen("intro");
 
+  const handleBack = () => {
+    if (screen === "prompt" && promptIndex > 0) {
+      setPromptIndex((p) => p - 1);
+      setEntries((prev) => prev.slice(0, -1));
+    } else if (screen === "prompt" && promptIndex === 0) {
+      setScreen("intro");
+    } else if (screen === "reflection") {
+      setScreen("prompt");
+    } else if (screen === "completion") {
+      setScreen("reflection");
+    }
+  };
+
   switch (screen) {
     case "intro":
       return <IntroScreen onStart={handleStart} onViewHistory={handleViewHistory} hasHistory={history.length > 0} />;
@@ -101,12 +114,13 @@ const Index = () => {
           total={PROMPTS.length}
           isLast={promptIndex === PROMPTS.length - 1}
           onSubmit={handleSubmit}
+          onBack={handleBack}
         />
       );
     case "reflection":
-      return <ReflectionScreen entries={entries} onComplete={handleReflectionComplete} />;
+      return <ReflectionScreen entries={entries} onComplete={handleReflectionComplete} onBack={handleBack} />;
     case "completion":
-      return <CompletionScreen entries={entries} onSave={handleSave} onRestart={handleRestart} />;
+      return <CompletionScreen entries={entries} onSave={handleSave} onRestart={handleRestart} onViewHistory={handleViewHistory} />;
     case "history":
       return <HistoryScreen journals={history} onBack={handleBackFromHistory} />;
   }
