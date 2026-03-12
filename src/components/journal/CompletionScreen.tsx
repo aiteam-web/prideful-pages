@@ -9,10 +9,12 @@ const CompletionScreen = ({
   entries,
   onSave,
   onRestart,
+  onViewHistory,
 }: {
   entries: Entry[];
   onSave: () => void;
   onRestart: () => void;
+  onViewHistory: () => void;
 }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen rainbow-bg px-6 py-10 animate-fade-in">
@@ -25,6 +27,14 @@ const CompletionScreen = ({
         <div className="space-y-3">
           <Button variant="pride" size="lg" className="w-full" onClick={onSave}>
             Save My Journal
+          </Button>
+          <Button
+            variant="ghost"
+            size="lg"
+            className="w-full text-muted-foreground"
+            onClick={onViewHistory}
+          >
+            View Past Journals
           </Button>
           <Button
             variant="ghost"
