@@ -10,24 +10,25 @@ const PROMPTS = [
   {
     prompt: "What part of your identity are you grateful for today?",
     hints: [
-      "I'm grateful for my courage to live authentically.",
-      "I'm grateful for the community that supports me.",
-      "I'm grateful for the resilience I've developed.",
+      "I'm grateful for the courage to come out and live as my true self.",
+      "I'm thankful for my queer joy — it lights up every room I walk into.",
+      "I'm proud of my identity and the love it allows me to give and receive.",
     ],
   },
   {
-    prompt: "What experience or journey helped shape who you are?",
+    prompt: "What experience on your Pride journey helped shape who you are?",
     hints: [
-      "My experiences helped me grow stronger.",
-      "My journey helped me understand others better.",
+      "Attending my first Pride march made me feel seen and celebrated.",
+      "Finding my chosen family taught me that love has no limits.",
+      "Standing up for myself when it was scary made me unshakeable.",
     ],
   },
   {
-    prompt: "What strength in yourself are you grateful for?",
+    prompt: "What queer strength in yourself are you most proud of?",
     hints: [
-      "My resilience.",
-      "My empathy.",
-      "My creativity.",
+      "My ability to love fiercely and without apology.",
+      "My resilience — I've turned every struggle into power.",
+      "My authenticity inspires others to embrace who they are.",
     ],
   },
 ];
