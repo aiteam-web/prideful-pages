@@ -35,9 +35,16 @@ const PromptScreen = ({ prompt, hints, current, total, isLast, onSubmit, onBack 
           />
 
           <div className="space-y-1.5">
-            <p className="text-xs text-muted-foreground">Example reflections:</p>
+            <p className="text-xs text-muted-foreground">Tap to use:</p>
             {hints.map((h, i) => (
-              <p key={i} className="text-xs text-muted-foreground italic journal-font text-justify">"{h}"</p>
+              <button
+                key={i}
+                type="button"
+                onClick={() => setText(h)}
+                className="block w-full text-left text-xs text-primary/70 hover:text-primary italic journal-font text-justify px-3 py-1.5 rounded-lg hover:bg-primary/10 transition-colors cursor-pointer"
+              >
+                "{h}"
+              </button>
             ))}
           </div>
         </div>
