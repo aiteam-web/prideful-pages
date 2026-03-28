@@ -76,8 +76,29 @@
   }
 
   #root {
-    max-width: 480px;
+    max-width: 430px;
+    min-height: 100dvh;
     margin: 0 auto;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 480px) {
+    body {
+      background-color: hsl(var(--muted));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    #root {
+      min-height: 812px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 2rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px hsl(var(--border));
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
