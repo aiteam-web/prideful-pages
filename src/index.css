@@ -86,7 +86,7 @@
 
   @media (min-width: 480px) {
     body {
-      background-color: hsl(330 30% 93%);
+      background-color: hsl(var(--background));
       display: flex;
       justify-content: center;
       align-items: center;
